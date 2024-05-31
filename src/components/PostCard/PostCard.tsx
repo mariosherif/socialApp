@@ -6,12 +6,17 @@ import reactotron from 'reactotron-react-native';
 import {PostCardProps} from './PostCard.types';
 
 const PostCard: FC<PostCardProps> = ({
-  id,
+  postId = 0,
   title = 'No Title',
   content = 'No Content',
+  isViewing = false,
+  onPostPress = () => {},
 }) => {
   return (
-    <Card style={styles.card} onPress={() => {}}>
+    <Card
+      style={styles.card}
+      disabled={isViewing}
+      onPress={() => onPostPress(postId, title, content)}>
       <Card.Title
         title={'Anonymous'}
         titleVariant="bodyLarge"

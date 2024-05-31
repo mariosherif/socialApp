@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ActivityIndicator, FlatList, Image, Text, View} from 'react-native';
 import Loading from '../../components/Loading/Loading';
 import PostCard from '../../components/PostCard/PostCard';
 import {COLORS} from '../../constants/Colors';
 import {getPosts} from '../../services/posts';
 import {styles} from './Home.styles';
+import {HomeProps} from './Home.types';
+import reactotron from 'reactotron-react-native';
 
-const Home = () => {
+const Home: FC<HomeProps> = ({navigation}) => {
   const {
-    data,
+    data: postsData,
     isLoading,
     hasNextPage,
     fetchNextPage,
@@ -17,13 +19,20 @@ const Home = () => {
     refetch,
   } = getPosts();
 
+  const handlePostPress = (postId: number, title: string, content: string) => {
+    navigation.navigate('PostDetails', {
+      postId,
+      title,
+      content,
+    });
+  };
   return (
     <View>
       {isLoading ? (
         <Loading />
       ) : (
         <FlatList
-          data={data?.pages?.flatMap(page => page.data)}
+          data={postsData?.pages?.flatMap(page => page.data)}
           showsVerticalScrollIndicator={false}
           ListEmptyComponent={
             <View style={styles.errorView}>
@@ -35,7 +44,12 @@ const Home = () => {
             </View>
           }
           renderItem={({item}) => (
-            <PostCard id={item.id} title={item.title} content={item.body} />
+            <PostCard
+              postId={item.id}
+              title={item.title}
+              content={item.body}
+              onPostPress={handlePostPress}
+            />
           )}
           keyExtractor={(item, index) => index.toString()}
           onEndReached={() => {
@@ -49,7 +63,7 @@ const Home = () => {
               <ActivityIndicator
                 color={COLORS.primaryColor}
                 size={'large'}
-                style={styles.fetcingPagesIndicator}
+                style={styles.fetchingPagesIndicator}
               />
             ) : null
           }

@@ -1,6 +1,7 @@
 import {useInfiniteQuery} from '@tanstack/react-query';
+import {GLOBAL_VARS} from '../constants/GlobalVars';
 
-const BASE_URL = 'https://gorest.co.in';
+const {BASE_URL} = GLOBAL_VARS;
 
 const fetchPosts = async ({pageParam = 1}) => {
   const data = await fetch(
@@ -14,6 +15,7 @@ const getPosts = () => {
     queryKey: ['posts'],
     queryFn: fetchPosts,
     getNextPageParam: (lastPage, allPages) => allPages.length + 1,
+    getPreviousPageParam: (firstPage, allPages) => allPages.length - 1,
   });
 };
 

@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   emptyData: {
     alignSelf: 'center',
   },
-  fetcingPagesIndicator: {
+  fetchingPagesIndicator: {
     marginTop: 10,
   },
 });
