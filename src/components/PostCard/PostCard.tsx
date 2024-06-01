@@ -21,12 +21,8 @@ const PostCard: FC<PostCardProps> = ({
         title={'Anonymous'}
         titleVariant="bodyLarge"
         titleStyle={styles.cardTitle}
-        left={props => (
-          <Avatar.Image
-            {...props}
-            size={40}
-            source={{uri: 'https://picsum.photos/200'}}
-          />
+        left={() => (
+          <Avatar.Image size={40} source={{uri: 'https://picsum.photos/200'}} />
         )}
       />
       <Card.Content>

@@ -2,10 +2,14 @@ import {StyleSheet} from 'react-native';
 import {COLORS} from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
-  card: {
-    margin: 10,
+  commentsCard: {
+    marginHorizontal: 15,
+    marginVertical: 10,
+    borderWidth: 1,
+    borderColor: COLORS.secondaryColor,
+    backgroundColor: COLORS.background,
   },
-  cardTitle: {
+  title: {
     fontWeight: 'bold',
     color: COLORS.secondaryColor,
     marginTop: 10,

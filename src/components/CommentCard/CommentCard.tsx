@@ -8,11 +8,11 @@ const CommentCard: FC<CommentCardProps> = ({
   body = 'No Content',
 }) => {
   return (
-    <Card style={styles.card} disabled={true}>
+    <Card style={styles.commentsCard} disabled={true}>
       <Card.Title
         title={name}
         titleVariant="bodyMedium"
-        titleStyle={styles.cardTitle}
+        titleStyle={styles.title}
         left={() => (
           <Avatar.Image size={35} source={{uri: 'https://picsum.photos/100'}} />
         )}

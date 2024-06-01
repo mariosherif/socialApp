@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
   },
   commentsTitle: {
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 7,
+    marginBottom: 5,
     fontWeight: '800',
     fontSize: 15,
     color: COLORS.secondaryColor,
