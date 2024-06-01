@@ -1,5 +1,4 @@
 import {useInfiniteQuery} from '@tanstack/react-query';
-import reactotron from 'reactotron-react-native';
 
 const BASE_URL = 'https://gorest.co.in';
 

@@ -6,7 +6,6 @@ import {COLORS} from '../../constants/Colors';
 import {getPosts} from '../../services/posts';
 import {styles} from './Home.styles';
 import {HomeProps} from './Home.types';
-import reactotron from 'reactotron-react-native';
 
 const Home: FC<HomeProps> = ({navigation}) => {
   const {
