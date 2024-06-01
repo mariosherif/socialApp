@@ -5,7 +5,7 @@ Social App is a react native mobile app designed to share your thoughts, connect
 
 ## Screenshots
 
-![SimulatorScreenRecording-iPhone15-2024-06-01at17 07 19-ezgif com-video-to-gif-converter](https://github.com/mariosherif/socialApp/assets/53220980/853de221-aed6-49c3-8236-f239e176c160)
+![SimulatorScreenRecording-iPhone15-2024-06-01at17 07 19-ezgif com-video-to-gif-converter (1)](https://github.com/mariosherif/socialApp/assets/53220980/dc72b7e7-23e9-48d0-81fa-0d1289ac4577)
 
 ## Features
 
