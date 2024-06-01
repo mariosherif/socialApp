@@ -10,6 +10,10 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
+import android.os.Bundle;
+import com.facebook.react.ReactActivity;
+import org.devio.rn.splashscreen.SplashScreen;
+import com.cboy.rn.splashscreen.SplashScreen;
 
 class MainApplication : Application(), ReactApplication {
 
@@ -33,6 +37,7 @@ class MainApplication : Application(), ReactApplication {
     get() = getDefaultReactHost(applicationContext, reactNativeHost)
 
   override fun onCreate() {
+    SplashScreen.show(this);  // here
     super.onCreate()
     SoLoader.init(this, false)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
